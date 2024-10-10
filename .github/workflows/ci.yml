@@ -2,9 +2,9 @@ name: Node.js CI # 작업 이름
 
 on: # 이벤트
   push: #push 발생하면 jobs 해라
-    branches: [ "master" ]
+    branches: [ "main" ]
   pull_request:
-    branches: [ "master" ]
+    branches: [ "main" ]
 
 jobs: #워크플로
   build:
