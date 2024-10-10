@@ -7,7 +7,7 @@ on: # 이벤트
     branches: [ "main" ]
 
 jobs: #워크플로
-  build:
+  build: # job의 이름
 
     runs-on: ubuntu-latest # 러너 : 우분투 실행
 
