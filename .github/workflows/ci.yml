@@ -1,22 +1,22 @@
-name: Node.js CI
+name: Node.js CI # 작업 이름
 
-on:
-  push:
-    branches: [ "main" ]
+on: # 이벤트
+  push: #push 발생하면 jobs 해라
+    branches: [ "master" ]
   pull_request:
-    branches: [ "main" ]
+    branches: [ "master" ]
 
-jobs:
+jobs: #워크플로
   build:
 
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-latest # 러너 : 우분투 실행
 
-    steps:
-    - uses: actions/checkout@v4
+    steps: # 스탭 : action, 명령어(npm)
+    - uses: actions/checkout@v4 # git repository의 소스 꺼내옴
     - name: Use Node.js 18.x
-      uses: actions/setup-node@v4
+      uses: actions/setup-node@v4 # node.js 환경 구축
       with:
         node-version: 18.x
         cache: 'npm'
-    - run: npm ci
+    - run: npm ci # clean install
     - run: npm test
